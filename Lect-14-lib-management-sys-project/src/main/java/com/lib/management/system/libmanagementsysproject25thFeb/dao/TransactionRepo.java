@@ -18,8 +18,9 @@ public interface TransactionRepo extends JpaRepository<Transaction, Integer> {
 //	List<Transaction> findByBookAndUserAndTransactionTypeOrderByIdDesc(Book book,User user,
 //																	TransactionType transactionType);
 	
-	List<Transaction> findByBookAndUserOrderByIdDesc(
-            Book book, User user);
+	List<Transaction> findByBookAndUserAndTransactionTypeOrderByIdDesc(
+            Book book, User user,
+            TransactionType transactionType);
 	
 	
 //	Transaction findTopByBookAndUserAndTransactionTypeOrderByIdDesc(Book book,User user,

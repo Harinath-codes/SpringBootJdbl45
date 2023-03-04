@@ -50,7 +50,7 @@ public class Transaction {
 	
 	
 	@Enumerated(value = EnumType.STRING)
-	private TransactionType TransactionType;
+	private TransactionType transactionType;
 	
 	@Enumerated(value = EnumType.STRING)
 	private TransactionStatus TransactionStatus;

@@ -70,7 +70,7 @@ public class TransactionService {
 		Transaction transaction = Transaction.builder()
 										.book(book)
 										.user(student)
-										.TransactionType(TransactionType.ISSUE)
+										.transactionType(TransactionType.ISSUE)
 										.TransactionStatus(TransactionStatus.PENDING)
 										.transcationId(UUID.randomUUID().toString())
 										.build();
@@ -113,8 +113,8 @@ public class TransactionService {
 				
 		}
 		
-		List<Transaction> issueTxnList = transactionRepo.findByBookAndUserOrderByIdDesc(
-				book, student);
+		List<Transaction> issueTxnList = transactionRepo.findByBookAndUserAndTransactionTypeOrderByIdDesc(
+				book, student, TransactionType.ISSUE);
 		
 		
 		Transaction issueTnx = issueTxnList.get(0);
@@ -135,7 +135,7 @@ public class TransactionService {
 		
 		Transaction transaction = Transaction.builder()
 				.transcationId(UUID.randomUUID().toString())
-				.TransactionType(TransactionType.RETURN)
+				.transactionType(TransactionType.RETURN)
 				.TransactionStatus(TransactionStatus.PENDING)
 				.book(book)
 				.user(student)
