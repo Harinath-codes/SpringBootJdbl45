@@ -39,7 +39,7 @@ public class NotificationConfig {
         javaMailSender.setHost("smtp.gmail.com");
         javaMailSender.setPort(587);
         javaMailSender.setUsername("jdbl2951@gmail.com");
-        javaMailSender.setPassword("yrjvunwgxphoxeor");
+        javaMailSender.setPassword("");////update pasword check in file ----- removing due security purpose
 
         Properties properties = javaMailSender.getJavaMailProperties();
         properties.put("mail.smtp.starttls.enable", true);
